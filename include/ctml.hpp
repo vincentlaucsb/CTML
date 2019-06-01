@@ -426,6 +426,18 @@ namespace CTML
         }
 
         /**
+         * Append a child node to this node and
+         * return a pointer to the node added.
+         */
+        Node& AppendChild(Node child, Node * & out)
+        {
+            m_children.push_back(child);
+            out = &(m_children.back());
+
+            return *this;
+        }
+
+        /**
          * Append a single text node to the element.
          * 
          * This is the recommended way to set content now
